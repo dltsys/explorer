@@ -1,2 +1,6 @@
 #!/bin/bash
-docker-compose build && docker rm -f abe && docker-compose up -d
+sudo mkdir data-db
+sudo chmod a+rwX data-db
+docker-compose build
+docker rm -f abe
+docker-compose up -d

@@ -16,10 +16,10 @@
 
 from .C11Chain import C11Chain
 
-class Dash(C11Chain):
+class Rash(C11Chain):
     def __init__(chain, **kwargs):
-        chain.name = 'Smash'
-        chain.code3 = 'SMASH'
+        chain.name = 'Rash'
+        chain.code3 = 'RASH'
         chain.address_version = '\x4c'
         chain.script_addr_vers = '\x05'
         chain.magic = '\x62\x65\x65\x66'

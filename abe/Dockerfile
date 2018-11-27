@@ -7,10 +7,14 @@ RUN git clone https://github.com/rlaime/c11_hash && \
     cd c11_hash && \
     python setup.py install
 
-#ADD dash-abe /abe/
-RUN git clone https://github.com/nightlydash/dash-abe /abe/
+RUN git clone https://github.com/lhartikk/xcoin-hash && \
+    cd xcoin-hash && \
+    python setup.py install
 
-ADD Smash.py /abe/Abe/Chain/Smash.py
+ADD dash-abe /abe/
+#RUN git clone https://github.com/nightlydash/dash-abe /abe/
+
+ADD Rash.py /abe/Abe/Chain/Rash.py
 ADD C11Chain.py /abe/Abe/Chain/C11Chain.py
 ADD C11PosChain.py /abe/Abe/Chain/C11PosChain.py
 ADD abe.fcgi /abe/cgi-bin/abe.fcgi
