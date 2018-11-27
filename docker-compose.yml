@@ -1,0 +1,23 @@
+version: '3'
+services: 
+  abe-db:
+    container_name: abe-db
+    image: postgres:9.5
+    environment:
+      - SERVER_PORT=5432
+      - TZ=Europe/Moscow
+      - POSTGRES_PASSWORD=abe
+      - POSTGRES_USER=abe
+      - POSTGRES_DB=abe
+    volumes:
+      - ./data-db:/var/lib/postgresql/data
+    restart: unless-stopped
+  abe:
+    container_name: abe
+    image: abe
+    build: ./abe
+    ports:
+      - 8081:80
+    volumes:
+      - /home/dev/fullnode/node-1:/data:ro
+      - ./logs:/var/log/apache2
